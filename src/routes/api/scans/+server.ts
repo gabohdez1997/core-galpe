@@ -1,12 +1,12 @@
 import { json } from '@sveltejs/kit';
 import { supabase } from '$lib/supabase/client';
-import { PRIVATE_SCANNER_KEY } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
 export async function POST({ request }) {
     const scannerKey = request.headers.get('X-Scanner-Key');
 
     // Basic shared-secret auth
-    if (scannerKey !== PRIVATE_SCANNER_KEY) {
+    if (scannerKey !== env.PRIVATE_SCANNER_KEY) {
         return json({ error: 'Unauthorized' }, { status: 401 });
     }
 
