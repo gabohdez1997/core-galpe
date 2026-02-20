@@ -1,8 +1,4 @@
 import { createClient } from '@supabase/supabase-js';
-import { env } from '$env/dynamic/public';
+import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public';
 
-// Provide fallback values during build time so the analyzer doesn't crash
-export const supabase = createClient(
-    env.PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co',
-    env.PUBLIC_SUPABASE_ANON_KEY || 'placeholder'
-);
+export const supabase = createClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY);
