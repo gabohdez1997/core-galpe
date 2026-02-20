@@ -1,0 +1,19 @@
+Loading svelte-check in workspace: c:\Users\SISTEMAS-02\.gemini\antigravity\scratch\core-galpe
+Getting Svelte diagnostics...
+
+c:\Users\SISTEMAS-02\.gemini\antigravity\scratch\core-galpe\[32msrc\lib\auth.svelte.ts[39m:31:25
+[31mError[39m: Object is possibly 'null'. 
+[36m                    // but the filter above handles it or we can just fetch all if admin.
+                    if ([35mthis.user[36m.role === 'admin') {
+                        const { data: allPerms } = await supabase.from('permissions').select('slug');[39m
+
+c:\Users\SISTEMAS-02\.gemini\antigravity\scratch\core-galpe\[32msrc\routes\(app)\inventory\+page.svelte[39m:66:25
+[31mError[39m: Argument of type 'string | null' is not assignable to parameter of type 'string | AnyComponent'.
+  Type 'null' is not assignable to type 'string | AnyComponent'. (ts)
+[36m            error = e.message || "No se pudo conectar con Supabase. Verifica tu configuraci├│n.";
+            toast.error([35merror[36m);
+        } finally {[39m
+
+====================================
+[31msvelte-check found 2 errors and 0 warnings in 2 files
+[39m

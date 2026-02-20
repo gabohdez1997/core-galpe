@@ -1,0 +1,54 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-galpe-red: #D92332;
+    --color-galpe-green: #2D733E;
+    --color-galpe-orange: #F26938;
+    --color-galpe-gray: #F2F2F2;
+
+    --backdrop-blur-glass: blur(16px);
+}
+
+@layer utilities {
+    .glass {
+        @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg;
+    }
+
+    .glass-dark {
+        @apply bg-black/20 backdrop-blur-xl border border-white/10 shadow-xl;
+    }
+}
+
+h1 {
+    font-family: Arial;
+    font-size: 2rem;
+}
+
+@font-face {
+    font-family: "Untitled";
+    src: url("/icon-core-galpe/fonts/Untitled.woff2") format("woff2"),
+        url("/icon-core-galpe/fonts/Untitled.ttf") format("truetype"),
+        url("/icon-core-galpe/fonts/Untitled.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+.icon {
+    font-family: "Untitled" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-core-galpe {
+    font-size: 2em;
+}
+
+.icon-core-galpe::before {
+    content: "\f000";
+}
