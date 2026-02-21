@@ -2,6 +2,7 @@
 	import "./layout.css";
 	import "$lib/styles/icons.css";
 	import { Toaster } from "svelte-sonner";
+	import { pwaInfo } from "virtual:pwa-info";
 
 	let { children } = $props();
 </script>
@@ -11,6 +12,7 @@
 	<link rel="manifest" href="/manifest.webmanifest" />
 	<meta name="theme-color" content="#2D733E" />
 	<title>CORE by Galpe</title>
+	{@html pwaInfo ? pwaInfo.webManifest.linkTag : ""}
 </svelte:head>
 
 <Toaster position="top-right" richColors />
