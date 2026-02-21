@@ -182,9 +182,14 @@
         try {
             loading = true;
             // Limpiar campos vacíos o nulos en specifications si fuera necesario
+            const finalAssetTag =
+                formData.asset_tag && formData.asset_tag.trim() !== ""
+                    ? formData.asset_tag.trim()
+                    : `S/N-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
+
             const payload = {
                 ...formData,
-                asset_tag: formData.asset_tag || null,
+                asset_tag: finalAssetTag,
                 serial_number: formData.serial_number || null,
                 image_url: formData.image_url || null,
             };
@@ -233,7 +238,9 @@
                 class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5"
             >
                 <div class="flex items-center gap-3">
-                    <div class="p-2 bg-galpe-green/20 rounded-xl text-galpe-green">
+                    <div
+                        class="p-2 bg-galpe-green/20 rounded-xl text-galpe-green"
+                    >
                         <Cpu size={24} />
                     </div>
                     <div>

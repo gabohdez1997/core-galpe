@@ -245,6 +245,14 @@
                 }
             }
 
+            // Generar una etiqueta única si viene vacía para evitar choque de índices estrictos "asset_tag_idx"
+            const finalAssetTag =
+                currentScan.asset_tag &&
+                currentScan.asset_tag !== "N/A" &&
+                currentScan.asset_tag.trim() !== ""
+                    ? currentScan.asset_tag.trim()
+                    : `S/N-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
+
             const equipmentPayload = {
                 name: currentScan.hostname,
                 type: "computer",
@@ -254,12 +262,7 @@
                     currentScan.serial_number.trim() !== ""
                         ? currentScan.serial_number.trim()
                         : null,
-                asset_tag:
-                    currentScan.asset_tag &&
-                    currentScan.asset_tag !== "N/A" &&
-                    currentScan.asset_tag.trim() !== ""
-                        ? currentScan.asset_tag.trim()
-                        : null,
+                asset_tag: finalAssetTag,
                 status: "active",
                 department_id: finalDeptId,
                 responsible_id: finalPersonnelId || null,
