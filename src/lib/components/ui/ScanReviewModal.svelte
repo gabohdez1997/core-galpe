@@ -248,7 +248,10 @@
             const equipmentPayload = {
                 name: currentScan.hostname,
                 type: "computer",
-                serial_number: currentScan.serial_number,
+                serial_number:
+                    currentScan.serial_number !== "N/A"
+                        ? currentScan.serial_number
+                        : null,
                 asset_tag:
                     currentScan.asset_tag !== "N/A"
                         ? currentScan.asset_tag
@@ -333,7 +336,9 @@
                 class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5"
             >
                 <div class="flex items-center gap-3">
-                    <div class="p-2 bg-galpe-green/20 rounded-xl text-galpe-green">
+                    <div
+                        class="p-2 bg-galpe-green/20 rounded-xl text-galpe-green"
+                    >
                         <AlertCircle size={24} />
                     </div>
                     <div>

@@ -136,22 +136,44 @@ If respEmail = "" Then respEmail = "N/A"
 ' 8. Cargar en Supabase
 WScript.Echo vbCrLf & "Cargando en el sistema... "
 
+Function EscapeJSON(ByVal sText)
+    If IsNull(sText) Then
+        EscapeJSON = "N/A"
+        Exit Function
+    End If
+    Dim sOutput
+    sOutput = sText
+    sOutput = Replace(sOutput, "\", "\\")
+    sOutput = Replace(sOutput, """", "\""")
+    sOutput = Replace(sOutput, vbCrLf, "\n")
+    sOutput = Replace(sOutput, vbCr, "\n")
+    sOutput = Replace(sOutput, vbLf, "\n")
+    sOutput = Replace(sOutput, vbTab, "\t")
+    EscapeJSON = Trim(sOutput)
+End Function
+
+If IsNull(hostname) Then hostname = "N/A"
+If IsNull(serial) Then serial = "N/A"
+If IsNull(cpu) Then cpu = "N/A"
+If IsNull(ip) Then ip = "N/A"
+If IsNull(mac) Then mac = "N/A"
+
 Set objHTTP = CreateObject("MSXML2.ServerXMLHTTP")
 JSON = "{" & _
-    """hostname"": """ & hostname & """, " & _
-    """serial_number"": """ & serial & """, " & _
-    """cpu"": """ & cpu & """, " & _
+    """hostname"": """ & EscapeJSON(hostname) & """, " & _
+    """serial_number"": """ & EscapeJSON(serial) & """, " & _
+    """cpu"": """ & EscapeJSON(cpu) & """, " & _
     """ram_gb"": " & ramGB & ", " & _
-    """disks"": """ & Replace(disks, """", "'") & """, " & _
-    """ip_address"": """ & ip & """, " & _
-    """mac_address"": """ & mac & """, " & _
-    """asset_tag"": """ & assetTag & """, " & _
-    """responsible_name"": """ & respName & """, " & _
-    """responsible_email"": """ & respEmail & """, " & _
-    """scanner_user_email"": """ & scannerEmail & """, " & _
-    """monitor_model"": """ & monitorModel & """, " & _
-    """monitor_serial"": """ & monitorSerial & """, " & _
-    """printer_info"": """ & Replace(printers, """", "'") & """" & _
+    """disks"": """ & EscapeJSON(disks) & """, " & _
+    """ip_address"": """ & EscapeJSON(ip) & """, " & _
+    """mac_address"": """ & EscapeJSON(mac) & """, " & _
+    """asset_tag"": """ & EscapeJSON(assetTag) & """, " & _
+    """responsible_name"": """ & EscapeJSON(respName) & """, " & _
+    """responsible_email"": """ & EscapeJSON(respEmail) & """, " & _
+    """scanner_user_email"": """ & EscapeJSON(scannerEmail) & """, " & _
+    """monitor_model"": """ & EscapeJSON(monitorModel) & """, " & _
+    """monitor_serial"": """ & EscapeJSON(monitorSerial) & """, " & _
+    """printer_info"": """ & EscapeJSON(printers) & """" & _
     "}"
 
 objHTTP.Open "POST", ApiUrl, False
