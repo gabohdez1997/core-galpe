@@ -249,12 +249,16 @@
                 name: currentScan.hostname,
                 type: "computer",
                 serial_number:
-                    currentScan.serial_number !== "N/A"
-                        ? currentScan.serial_number
+                    currentScan.serial_number &&
+                    currentScan.serial_number !== "N/A" &&
+                    currentScan.serial_number.trim() !== ""
+                        ? currentScan.serial_number.trim()
                         : null,
                 asset_tag:
-                    currentScan.asset_tag !== "N/A"
-                        ? currentScan.asset_tag
+                    currentScan.asset_tag &&
+                    currentScan.asset_tag !== "N/A" &&
+                    currentScan.asset_tag.trim() !== ""
+                        ? currentScan.asset_tag.trim()
                         : null,
                 status: "active",
                 department_id: finalDeptId,
