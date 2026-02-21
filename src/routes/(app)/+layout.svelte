@@ -189,7 +189,9 @@
                         <div class="flex items-center gap-3">
                             <ClipboardList
                                 size={20}
-                                class={expanded.support ? "text-galpe-green" : ""}
+                                class={expanded.support
+                                    ? "text-galpe-green"
+                                    : ""}
                             />
                             <span class="font-medium text-sm"
                                 >Soporte Técnico</span
@@ -487,6 +489,26 @@
                                     <Boxes size={20} /> <span>Consumibles</span>
                                 </a>
                             {/if}
+                            <div
+                                class="px-4 pt-3 pb-1 text-[10px] font-bold uppercase tracking-widest text-white/20"
+                            >
+                                Gestión de Tickets
+                            </div>
+                            <a
+                                href="/support/tickets"
+                                onclick={() => (isMobileMenuOpen = false)}
+                                class="flex items-center gap-3 p-4 rounded-xl text-white/50 hover:text-white"
+                            >
+                                <Ticket size={20} /> <span>Tickets</span>
+                            </a>
+                            <a
+                                href="/support/categories"
+                                onclick={() => (isMobileMenuOpen = false)}
+                                class="flex items-center gap-3 p-4 rounded-xl text-white/50 hover:text-white"
+                            >
+                                <AlertCircle size={20} />
+                                <span>Tipos de Fallas</span>
+                            </a>
                         </div>
                     </div>
                 {/if}
