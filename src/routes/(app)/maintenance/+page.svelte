@@ -128,7 +128,7 @@
             case "completed":
                 return "text-galpe-green bg-galpe-green/20 border-galpe-green/30";
             case "cancelled":
-                return "text-galpe-red bg-galpe-red/20 border-galpe-red/30";
+                return "text-galpe-green bg-galpe-green/20 border-galpe-green/30";
             default:
                 return "text-white/40 bg-white/5 border-white/10";
         }
@@ -148,7 +148,7 @@
             <h1
                 class="text-3xl font-bold text-white/90 flex items-center gap-3"
             >
-                <Wrench class="text-galpe-red" size={32} />
+                <Wrench class="text-galpe-green" size={32} />
                 Gestión de Mantenimientos
             </h1>
             <p class="text-white/50">
@@ -240,7 +240,7 @@
                     type="text"
                     bind:value={searchQuery}
                     placeholder="Buscar por título o equipo..."
-                    class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-galpe-red/30 transition-all"
+                    class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-galpe-green/30 transition-all"
                 />
             </div>
             <div class="flex gap-2 overflow-x-auto pb-2 lg:pb-0 no-scrollbar">
@@ -267,13 +267,13 @@
                 class="flex flex-col items-center justify-center py-20 text-white/20"
             >
                 <div
-                    class="w-10 h-10 border-4 border-galpe-red border-t-transparent rounded-full animate-spin mb-4"
+                    class="w-10 h-10 border-4 border-galpe-green border-t-transparent rounded-full animate-spin mb-4"
                 ></div>
                 Cargando registros...
             </div>
         {:else if error}
             <div
-                class="flex flex-col items-center justify-center py-20 text-galpe-red/60 glass rounded-2xl"
+                class="flex flex-col items-center justify-center py-20 text-galpe-green/60 glass rounded-2xl"
             >
                 <AlertCircle size={48} class="mb-4" />
                 <p>{error}</p>
@@ -315,7 +315,7 @@
                                 <td class="px-6 py-4">
                                     <div class="flex items-center gap-3">
                                         <div
-                                            class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/20 group-hover:text-galpe-red transition-colors"
+                                            class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/20 group-hover:text-galpe-green transition-colors"
                                         >
                                             <Wrench size={18} />
                                         </div>
@@ -398,7 +398,7 @@
                                             <button
                                                 onclick={() =>
                                                     handleDelete(record.id)}
-                                                class="p-2 rounded-lg bg-galpe-red/10 hover:bg-galpe-red/20 text-galpe-red/60 hover:text-galpe-red"
+                                                class="p-2 rounded-lg bg-galpe-green/10 hover:bg-galpe-green/20 text-galpe-green/60 hover:text-galpe-green"
                                                 title="Eliminar"
                                             >
                                                 <Trash2 size={16} />

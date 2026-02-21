@@ -118,7 +118,7 @@
     <header class="flex items-center justify-between">
         <div>
             <h1 class="text-3xl font-bold text-white flex items-center gap-3">
-                <!-- <Shield size={32} class="text-galpe-red" /> -->
+                <Shield size={32} class="text-galpe-green" />
                 Gestión de Roles
             </h1>
             <p class="text-white/50">
@@ -127,7 +127,7 @@
         </div>
         <!-- <button
             onclick={() => (showCreateModal = true)}
-            class="flex items-center gap-2 px-4 py-2 bg-galpe-red hover:bg-galpe-red/80 text-white rounded-xl transition-all active:scale-95"
+            class="flex items-center gap-2 px-4 py-2 bg-galpe-green hover:bg-galpe-green/80 text-white rounded-xl transition-all active:scale-95"
         >
             <Plus size={20} />
             Nuevo Rol
@@ -141,7 +141,7 @@
     <GlassCard>
         {#if loading}
             <div class="flex items-center justify-center py-20">
-                <Loader2 size={32} class="animate-spin text-galpe-red" />
+                <Loader2 size={32} class="animate-spin text-galpe-green" />
             </div>
         {:else if roles.length === 0}
             <div class="text-center py-20 text-white/20">
@@ -161,7 +161,7 @@
                                 </h3>
                                 {#if role.is_system}
                                     <span
-                                        class="px-2 py-1 text-xs bg-galpe-red/20 text-galpe-red border border-galpe-red/30 rounded-lg"
+                                        class="px-2 py-1 text-xs bg-galpe-green/20 text-galpe-green border border-galpe-green/30 rounded-lg"
                                     >
                                         Sistema
                                     </span>
@@ -218,7 +218,7 @@
     >
         <GlassCard class="max-w-md w-full p-6 space-y-4">
             <h2 class="text-2xl font-bold text-white flex items-center gap-2">
-                <Plus size={24} class="text-galpe-red" />
+                <Plus size={24} class="text-galpe-green" />
                 Crear Nuevo Rol
             </h2>
 
@@ -231,7 +231,7 @@
                         type="text"
                         bind:value={newRole.slug}
                         placeholder="tecnico, supervisor, auditor..."
-                        class="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/20 focus:border-galpe-red focus:outline-none"
+                        class="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/20 focus:border-galpe-green focus:outline-none"
                     />
                     <p class="text-xs text-white/40 mt-1">
                         Solo letras minúsculas, números y guiones
@@ -246,7 +246,7 @@
                         type="text"
                         bind:value={newRole.name}
                         placeholder="Técnico, Supervisor, Auditor..."
-                        class="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/20 focus:border-galpe-red focus:outline-none"
+                        class="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/20 focus:border-galpe-green focus:outline-none"
                     />
                 </div>
 
@@ -258,7 +258,7 @@
                         bind:value={newRole.description}
                         placeholder="Descripción del rol..."
                         rows="3"
-                        class="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/20 focus:border-galpe-red focus:outline-none resize-none"
+                        class="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/20 focus:border-galpe-green focus:outline-none resize-none"
                     ></textarea>
                 </div>
             </div>
@@ -272,7 +272,7 @@
                 </button>
                 <button
                     onclick={createRole}
-                    class="flex-1 px-4 py-2 bg-galpe-red hover:bg-galpe-red/80 text-white rounded-xl transition-all active:scale-95"
+                    class="flex-1 px-4 py-2 bg-galpe-green hover:bg-galpe-green/80 text-white rounded-xl transition-all active:scale-95"
                 >
                     Crear Rol
                 </button>

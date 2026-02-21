@@ -228,7 +228,7 @@
                 <h2
                     class="text-xl font-bold text-white flex items-center gap-2"
                 >
-                    <Shield size={20} class="text-galpe-red" />
+                    <Shield size={20} class="text-galpe-green" />
                     {isCreating ? "Crear Usuario" : "Editar Usuario"}
                 </h2>
                 <button
@@ -278,7 +278,7 @@
                             type="email"
                             bind:value={formData.email}
                             required
-                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                             placeholder="usuario@ejemplo.com"
                         />
                     </div>
@@ -295,7 +295,7 @@
                             bind:value={formData.password}
                             required
                             minlength="6"
-                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                             placeholder="Mínimo 6 caracteres"
                         />
                     </div>
@@ -311,7 +311,7 @@
                         id="full_name"
                         type="text"
                         bind:value={formData.full_name}
-                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                         placeholder="Ej: Juan Pérez"
                     />
                 </div>
@@ -325,7 +325,7 @@
                     <select
                         id="role"
                         bind:value={formData.role}
-                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none"
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none"
                     >
                         {#each roles as role}
                             <option value={role.slug}>
@@ -347,7 +347,7 @@
                     <select
                         id="dept"
                         bind:value={formData.department_id}
-                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none"
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none"
                     >
                         <option value="">Sin asignar</option>
                         {#each departments as dept}
@@ -363,7 +363,7 @@
                         {#if !isConfirmingDelete}
                             <GlassButton
                                 variant="secondary"
-                                class="w-full text-galpe-red border-galpe-red/20 hover:bg-galpe-red/10"
+                                class="w-full text-galpe-green border-galpe-green/20 hover:bg-galpe-green/10"
                                 onclick={() => (isConfirmingDelete = true)}
                                 type="button"
                             >
@@ -372,10 +372,10 @@
                             </GlassButton>
                         {:else}
                             <div
-                                class="p-4 bg-galpe-red/10 border border-galpe-red/20 rounded-2xl space-y-3"
+                                class="p-4 bg-galpe-green/10 border border-galpe-green/20 rounded-2xl space-y-3"
                             >
                                 <p
-                                    class="text-xs font-bold text-galpe-red uppercase tracking-wider flex items-center gap-2"
+                                    class="text-xs font-bold text-galpe-green uppercase tracking-wider flex items-center gap-2"
                                 >
                                     <Shield size={14} />
                                     Confirmar Eliminación Logicá
@@ -387,7 +387,7 @@
                                 <input
                                     type="password"
                                     bind:value={adminPassword}
-                                    class="w-full bg-black/20 border border-galpe-red/30 rounded-xl px-4 py-2 text-white text-sm focus:outline-none focus:ring-1 focus:ring-galpe-red/50"
+                                    class="w-full bg-black/20 border border-galpe-green/30 rounded-xl px-4 py-2 text-white text-sm focus:outline-none focus:ring-1 focus:ring-galpe-green/50"
                                     placeholder="Tu contraseña"
                                     required
                                 />
@@ -405,7 +405,7 @@
                                     </GlassButton>
                                     <GlassButton
                                         variant="primary"
-                                        class="flex-1 text-xs !bg-galpe-red"
+                                        class="flex-1 text-xs !bg-galpe-green"
                                         onclick={handleSoftDelete}
                                         {loading}
                                         type="button"

@@ -23,7 +23,7 @@
     const variants = {
         primary: "bg-white/10 hover:bg-white/20 text-white border-white/20",
         secondary: "bg-white/5 hover:bg-white/10 text-white/60 border-white/10",
-        danger: "bg-galpe-red/20 hover:bg-galpe-red/30 text-galpe-red border-galpe-red/30",
+        danger: "bg-galpe-green/20 hover:bg-galpe-green/30 text-galpe-green border-galpe-green/30",
         success:
             "bg-galpe-green/20 hover:bg-galpe-green/30 text-galpe-green border-galpe-green/30",
     };

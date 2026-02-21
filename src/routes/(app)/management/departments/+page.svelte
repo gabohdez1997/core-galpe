@@ -101,7 +101,10 @@
 <div class="max-w-4xl mx-auto p-4 md:p-8 space-y-6">
     <header class="flex justify-between items-center">
         <div>
-            <h1 class="text-3xl font-bold text-white">Departamentos</h1>
+            <h1 class="text-3xl font-bold text-white flex items-center gap-3">
+                <Users size={32} class="text-galpe-green" />
+                Departamentos
+            </h1>
             <p class="text-white/50">
                 Gestiona los equipos de trabajo y divisiones
             </p>
@@ -157,7 +160,7 @@
                             </button>
                             <button
                                 onclick={() => handleDelete(item.id)}
-                                class="p-2 text-galpe-red/60 hover:text-galpe-red transition-colors"
+                                class="p-2 text-galpe-green/60 hover:text-galpe-green transition-colors"
                             >
                                 <Trash2 size={16} />
                             </button>
@@ -199,7 +202,7 @@
                         type="text"
                         bind:value={formData.name}
                         placeholder="Ej: Finanzas, Recursos Humanos"
-                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40"
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40"
                     />
                 </div>
 
@@ -212,7 +215,7 @@
                     <select
                         id="dept-location"
                         bind:value={formData.location_id}
-                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 appearance-none cursor-pointer"
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 appearance-none cursor-pointer"
                     >
                         <option value="" disabled>Selecciona una sede</option>
                         {#each locations as loc}

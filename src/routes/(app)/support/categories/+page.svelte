@@ -93,7 +93,7 @@
             <h1
                 class="text-3xl font-bold text-white/90 flex items-center gap-3"
             >
-                <AlertCircle class="text-galpe-red" size={32} />
+                <AlertCircle class="text-galpe-green" size={32} />
                 Tipos de Fallas
             </h1>
             <p class="text-white/50">
@@ -118,7 +118,7 @@
                 type="text"
                 bind:value={searchQuery}
                 placeholder="Buscar por nombre o descripción..."
-                class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-galpe-red/30 transition-all"
+                class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-galpe-green/30 transition-all"
             />
         </div>
     </GlassCard>
@@ -126,9 +126,9 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {#if error}
             <div
-                class="col-span-full py-20 text-center glass rounded-2xl border-galpe-red/20"
+                class="col-span-full py-20 text-center glass rounded-2xl border-galpe-green/20"
             >
-                <AlertCircle size={48} class="mx-auto mb-4 text-galpe-red/60" />
+                <AlertCircle size={48} class="mx-auto mb-4 text-galpe-green/60" />
                 <p class="text-white/40 mb-4">{error}</p>
                 <GlassButton variant="secondary" onclick={fetchCategories}
                     >Reintentar</GlassButton
@@ -137,7 +137,7 @@
         {:else if loading}
             <div class="col-span-full py-20 text-center text-white/20">
                 <div
-                    class="w-10 h-10 border-4 border-galpe-red border-t-transparent rounded-full animate-spin mx-auto mb-4"
+                    class="w-10 h-10 border-4 border-galpe-green border-t-transparent rounded-full animate-spin mx-auto mb-4"
                 ></div>
                 Cargando categorías...
             </div>
@@ -175,7 +175,7 @@
                             </button>
                             <button
                                 onclick={() => handleDelete(item.id)}
-                                class="p-2 rounded-lg bg-galpe-red/10 hover:bg-galpe-red/20 text-galpe-red/60 hover:text-galpe-red transition-all"
+                                class="p-2 rounded-lg bg-galpe-green/10 hover:bg-galpe-green/20 text-galpe-green/60 hover:text-galpe-green transition-all"
                                 title="Eliminar"
                             >
                                 <Trash2 size={16} />

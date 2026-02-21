@@ -7,7 +7,7 @@ On Error Resume Next
 ' CONFIGURACION
 ScannerKey = "galpe_secure_scan_2026"
 ' ApiUrl = "https://192.168.88.166:5173/api/scans" 
-ApiUrl = "https://core-galpe.vercel.app/api/scans" 
+ApiUrl = "https://core.galpe2021.com/api/scans" 
 
 Function GetInput(prompt, title)
     If LCase(Right(WScript.FullName, 11)) = "cscript.exe" Then

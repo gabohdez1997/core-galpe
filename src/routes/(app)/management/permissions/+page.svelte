@@ -219,6 +219,7 @@
 <div class="max-w-7xl mx-auto p-4 md:p-8 space-y-6">
     <header>
         <h1 class="text-3xl font-bold text-white flex items-center gap-3">
+            <ShieldAlert size={32} class="text-galpe-green" />
             Matriz de Permisos
         </h1>
         <p class="text-white/50">
@@ -286,7 +287,9 @@
                                 class="px-6 py-4 border-b border-white/5"
                             >
                                 <div class="flex items-center gap-2">
-                                    <div class="h-px w-4 bg-galpe-red/50"></div>
+                                    <div
+                                        class="h-px w-4 bg-galpe-green/50"
+                                    ></div>
                                     <span
                                         class="text-[10px] font-black uppercase tracking-[0.2em] text-white/30"
                                     >
@@ -329,10 +332,10 @@
                                         class="hover:bg-white/5 transition-colors group"
                                     >
                                         <td
-                                            class="px-6 py-4 sticky left-0 bg-black/20 backdrop-blur-sm border-l-2 border-transparent group-hover:border-galpe-red/30 transition-all"
+                                            class="px-6 py-4 sticky left-0 bg-black/20 backdrop-blur-sm border-l-2 border-transparent group-hover:border-galpe-green/30 transition-all"
                                         >
                                             <p
-                                                class="text-sm font-bold text-white group-hover:text-galpe-red transition-colors"
+                                                class="text-sm font-bold text-white group-hover:text-galpe-green transition-colors"
                                             >
                                                 {getActionLabel(perm.slug)}
                                             </p>
@@ -354,7 +357,7 @@
                                                         role.slug,
                                                         perm.slug,
                                                     )
-                                                        ? 'bg-galpe-red/20 text-galpe-red border border-galpe-red/30 shadow-lg shadow-galpe-red/10'
+                                                        ? 'bg-galpe-green/20 text-galpe-green border border-galpe-green/30 shadow-lg shadow-galpe-green/10'
                                                         : 'bg-white/5 text-white/20 border border-white/10 hover:border-white/20 hover:text-white/40'}"
                                                 >
                                                     {#if saving === `${role.slug}-${perm.slug}`}
@@ -381,7 +384,7 @@
     </GlassCard>
 
     <div
-        class="bg-galpe-red/10 border border-galpe-red/20 rounded-2xl p-4 flex gap-3 text-sm text-galpe-red/80"
+        class="bg-galpe-green/10 border border-galpe-green/20 rounded-2xl p-4 flex gap-3 text-sm text-galpe-green/80"
     >
         <Shield size={20} />
         <p>

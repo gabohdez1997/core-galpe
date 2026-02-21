@@ -238,7 +238,7 @@
                 class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5"
             >
                 <div class="flex items-center gap-3">
-                    <div class="p-2 bg-galpe-red/20 rounded-xl text-galpe-red">
+                    <div class="p-2 bg-galpe-green/20 rounded-xl text-galpe-green">
                         <Wrench size={24} />
                     </div>
                     <div>
@@ -296,7 +296,7 @@
                                     <select
                                         id="eq"
                                         bind:value={formData.equipment_id}
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white appearance-none cursor-pointer focus:ring-2 focus:ring-galpe-red/30"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white appearance-none cursor-pointer focus:ring-2 focus:ring-galpe-green/30"
                                     >
                                         <option value="" disabled
                                             >Selecciona un equipo</option
@@ -521,7 +521,7 @@
                                         >
                                         <select
                                             bind:value={item.consumable_id}
-                                            class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:ring-1 focus:ring-galpe-red/30"
+                                            class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:ring-1 focus:ring-galpe-green/30"
                                         >
                                             <option value="" disabled
                                                 >Seleccionar...</option
@@ -547,7 +547,7 @@
                                     </div>
                                     <button
                                         onclick={() => removeConsumableRow(i)}
-                                        class="p-2.5 text-galpe-red/40 hover:text-galpe-red hover:bg-galpe-red/10 rounded-xl transition-all mb-0.5"
+                                        class="p-2.5 text-galpe-green/40 hover:text-galpe-green hover:bg-galpe-green/10 rounded-xl transition-all mb-0.5"
                                     >
                                         <Trash2 size={16} />
                                     </button>

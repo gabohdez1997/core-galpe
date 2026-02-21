@@ -333,7 +333,7 @@
                 class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5"
             >
                 <div class="flex items-center gap-3">
-                    <div class="p-2 bg-galpe-red/20 rounded-xl text-galpe-red">
+                    <div class="p-2 bg-galpe-green/20 rounded-xl text-galpe-green">
                         <AlertCircle size={24} />
                     </div>
                     <div>
@@ -361,7 +361,7 @@
                     <!-- Left: Technical Data -->
                     <div class="space-y-6">
                         <h3
-                            class="text-sm font-bold text-white flex items-center gap-2 border-l-4 border-galpe-red pl-3 uppercase tracking-tighter"
+                            class="text-sm font-bold text-white flex items-center gap-2 border-l-4 border-galpe-green pl-3 uppercase tracking-tighter"
                         >
                             <Cpu size={16} /> Datos Técnicos Detectados
                         </h3>
@@ -445,7 +445,7 @@
                                         />
                                         <button
                                             onclick={() => removeDisk(i)}
-                                            class="text-white/20 hover:text-galpe-red transition-colors"
+                                            class="text-white/20 hover:text-galpe-green transition-colors"
                                         >
                                             <Trash2 size={14} />
                                         </button>
@@ -460,7 +460,7 @@
                         <!-- Assignment -->
                         <div class="space-y-4">
                             <h3
-                                class="text-sm font-bold text-white flex items-center gap-2 border-l-4 border-galpe-red pl-3 uppercase tracking-tighter"
+                                class="text-sm font-bold text-white flex items-center gap-2 border-l-4 border-galpe-green pl-3 uppercase tracking-tighter"
                             >
                                 <Building size={16} /> Asignación Formal
                             </h3>
@@ -478,7 +478,7 @@
                                             onclick={() =>
                                                 (isCreatingDept =
                                                     !isCreatingDept)}
-                                            class="text-[10px] font-bold text-galpe-red hover:text-white transition-colors"
+                                            class="text-[10px] font-bold text-galpe-green hover:text-white transition-colors"
                                         >
                                             {isCreatingDept
                                                 ? "CANCELAR"
@@ -493,18 +493,18 @@
                                             <input
                                                 bind:value={newDeptName}
                                                 placeholder="Nombre Depto"
-                                                class="bg-white/5 border border-white/20 rounded-xl p-3 text-sm text-white outline-none focus:ring-1 focus:ring-galpe-red"
+                                                class="bg-white/5 border border-white/20 rounded-xl p-3 text-sm text-white outline-none focus:ring-1 focus:ring-galpe-green"
                                             />
                                             <input
                                                 bind:value={newLocationName}
                                                 placeholder="Sede/Edificio"
-                                                class="bg-white/5 border border-white/20 rounded-xl p-3 text-sm text-white outline-none focus:ring-1 focus:ring-galpe-red"
+                                                class="bg-white/5 border border-white/20 rounded-xl p-3 text-sm text-white outline-none focus:ring-1 focus:ring-galpe-green"
                                             />
                                         </div>
                                     {:else}
                                         <select
                                             bind:value={selectedDeptId}
-                                            class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-sm text-white focus:ring-2 focus:ring-galpe-red/40 outline-none"
+                                            class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-sm text-white focus:ring-2 focus:ring-galpe-green/40 outline-none"
                                         >
                                             <option value="" class="bg-black"
                                                 >Seleccionar ubicación...</option
@@ -523,10 +523,10 @@
                                 </div>
                                 {#if currentScan.responsible_name && currentScan.responsible_name !== "N/A"}
                                     <div
-                                        class="p-3 bg-galpe-red/10 border border-galpe-red/20 rounded-xl space-y-1 animate-in fade-in slide-in-from-top-2"
+                                        class="p-3 bg-galpe-green/10 border border-galpe-green/20 rounded-xl space-y-1 animate-in fade-in slide-in-from-top-2"
                                     >
                                         <p
-                                            class="text-[10px] font-bold text-galpe-red uppercase tracking-wider"
+                                            class="text-[10px] font-bold text-galpe-green uppercase tracking-wider"
                                         >
                                             Responsable Detectado
                                         </p>
@@ -547,7 +547,7 @@
                                             </div>
                                             {#if !selectedPersonnelId}
                                                 <span
-                                                    class="text-[9px] bg-galpe-red/20 text-galpe-red px-2 py-0.5 rounded-full font-bold"
+                                                    class="text-[9px] bg-galpe-green/20 text-galpe-green px-2 py-0.5 rounded-full font-bold"
                                                     >NUEVO - SE CREARÁ</span
                                                 >
                                             {:else}
@@ -566,7 +566,7 @@
                                     >
                                     <select
                                         bind:value={selectedPersonnelId}
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-sm text-white focus:ring-2 focus:ring-galpe-red/40 outline-none"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-sm text-white focus:ring-2 focus:ring-galpe-green/40 outline-none"
                                     >
                                         <option value="" class="bg-black"
                                             >Seleccionar responsable...</option
@@ -586,7 +586,7 @@
                         <!-- Peripherals -->
                         <div class="space-y-4">
                             <h3
-                                class="text-sm font-bold text-white flex items-center gap-2 border-l-4 border-galpe-red pl-3 uppercase tracking-tighter"
+                                class="text-sm font-bold text-white flex items-center gap-2 border-l-4 border-galpe-green pl-3 uppercase tracking-tighter"
                             >
                                 <Monitor size={16} /> Monitor y Periféricos
                             </h3>

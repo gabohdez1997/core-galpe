@@ -90,7 +90,7 @@
         // Colores para roles del sistema
         switch (role) {
             case "admin":
-                return "text-galpe-red bg-galpe-red/10 border-galpe-red/20";
+                return "text-galpe-green bg-galpe-green/10 border-galpe-green/20";
             case "editor":
                 return "text-blue-400 bg-blue-400/10 border-blue-400/20";
             case "viewer":
@@ -112,7 +112,10 @@
         class="flex flex-col md:flex-row md:items-center justify-between gap-4"
     >
         <div>
-            <h1 class="text-3xl font-bold text-white">Gestión de Usuarios</h1>
+            <h1 class="text-3xl font-bold text-white flex items-center gap-3">
+                <Users size={32} class="text-galpe-green" />
+                Gestión de Usuarios
+            </h1>
             <p class="text-white/50">Control de accesos y roles del sistema</p>
         </div>
         <!-- <button
@@ -120,7 +123,7 @@
                 editingProfile = null;
                 isModalOpen = true;
             }}
-            class="flex items-center gap-2 px-4 py-2 bg-galpe-red hover:bg-galpe-red/80 text-white rounded-xl transition-all active:scale-95"
+            class="flex items-center gap-2 px-4 py-2 bg-galpe-green hover:bg-galpe-green/80 text-white rounded-xl transition-all active:scale-95"
         >
             <Plus size={20} />
             Nuevo Usuario
@@ -148,13 +151,13 @@
                 type="text"
                 bind:value={searchQuery}
                 placeholder="Buscar por nombre o email..."
-                class="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/20 focus:border-galpe-red focus:outline-none transition-all"
+                class="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/20 focus:border-galpe-green focus:outline-none transition-all"
             />
         </div>
         <div>
             <select
                 bind:value={selectedRole}
-                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:border-galpe-red focus:outline-none transition-all appearance-none"
+                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:border-galpe-green focus:outline-none transition-all appearance-none"
             >
                 <option value="all">Todos los roles</option>
                 {#each roles as role}

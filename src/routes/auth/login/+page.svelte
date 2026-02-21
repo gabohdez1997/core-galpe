@@ -31,7 +31,7 @@
         <div class="flex justify-center mb-4">
             <span
                 style="font-size: 12rem;"
-                class="icon icon-core-galpe text-galpe-red text-6xl drop-shadow-[0_0_20px_rgba(217,35,50,0.5)]"
+                class="icon icon-core-galpe text-galpe-green text-6xl drop-shadow-[0_0_20px_rgba(45,115,62,0.5)]"
             ></span>
         </div>
         <!-- <p class="text-white/50 text-sm mb-8 text-center">
@@ -54,7 +54,7 @@
                     id="email"
                     bind:value={email}
                     placeholder="usuario@galpe.com"
-                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-galpe-red/30 transition-all font-sans"
+                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-galpe-green/30 transition-all font-sans"
                     required
                 />
             </div>
@@ -68,14 +68,14 @@
                     id="password"
                     bind:value={password}
                     placeholder="••••••••"
-                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-galpe-red/30 transition-all font-sans"
+                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-galpe-green/30 transition-all font-sans"
                     required
                 />
             </div>
 
             <GlassButton
                 variant="primary"
-                class="w-full py-4 text-lg font-bold bg-galpe-red hover:bg-red-700 mt-4 disabled:opacity-50"
+                class="w-full py-4 text-lg font-bold bg-galpe-green hover:bg-green-700 mt-4 disabled:opacity-50"
                 onclick={handleLogin}
             >
                 {loading ? "Iniciando sesión..." : "Entrar"}

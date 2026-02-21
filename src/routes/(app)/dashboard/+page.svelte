@@ -2,6 +2,7 @@
     import GlassCard from "$lib/components/ui/GlassCard.svelte";
     import GlassButton from "$lib/components/ui/GlassButton.svelte";
     import {
+        LayoutDashboard,
         Laptop,
         History,
         AlertCircle,
@@ -135,7 +136,7 @@
 
 {#if error}
     <div
-        class="flex flex-col items-center justify-center min-h-[60vh] text-galpe-red/70"
+        class="flex flex-col items-center justify-center min-h-[60vh] text-galpe-green/70"
     >
         <AlertCircle size={64} class="mb-4 opacity-50" />
         <h2 class="text-2xl font-bold">Error de Conexión</h2>
@@ -156,6 +157,7 @@
                 <h1
                     class="text-4xl font-bold tracking-tight flex items-center gap-4"
                 >
+                    <LayoutDashboard size={36} class="text-galpe-green" />
                     <span
                         class="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/50"
                         >Dashboard</span
@@ -189,7 +191,7 @@
                         >{stats.openTickets}</span
                     >
                 {/if}
-                <Ticket size={32} class="text-galpe-red mt-2" />
+                <Ticket size={32} class="text-galpe-green mt-2" />
             </GlassCard>
             <GlassCard
                 title="Tickets Resueltos"

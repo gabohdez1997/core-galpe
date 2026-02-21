@@ -61,7 +61,7 @@
         <div class="flex flex-col items-center">
             <span
                 style="font-size: 8rem;"
-                class="icon icon-core-galpe text-galpe-red text-6xl drop-shadow-[0_0_15px_rgba(217,35,50,0.5)]"
+                class="icon icon-core-galpe text-galpe-green text-6xl drop-shadow-[0_0_15px_rgba(45,115,62,0.5)]"
             ></span>
             <!-- <div class="flex flex-col">
                 <span
@@ -94,7 +94,7 @@
                     <div class="flex items-center gap-3">
                         <Package
                             size={20}
-                            class={expanded.inventory ? "text-galpe-red" : ""}
+                            class={expanded.inventory ? "text-galpe-green" : ""}
                         />
                         <span class="font-medium text-sm">Inventario</span>
                     </div>
@@ -189,7 +189,7 @@
                         <div class="flex items-center gap-3">
                             <ClipboardList
                                 size={20}
-                                class={expanded.support ? "text-galpe-red" : ""}
+                                class={expanded.support ? "text-galpe-green" : ""}
                             />
                             <span class="font-medium text-sm"
                                 >Soporte Técnico</span
@@ -275,7 +275,7 @@
                     <div class="flex items-center gap-3">
                         <Settings
                             size={20}
-                            class={expanded.system ? "text-galpe-red" : ""}
+                            class={expanded.system ? "text-galpe-green" : ""}
                         />
                         <span class="font-medium text-sm">Sistema</span>
                     </div>
@@ -356,10 +356,10 @@
         <div class="pt-6 border-t border-white/5">
             <button
                 onclick={handleLogout}
-                class="flex items-center gap-3 px-4 py-3 text-white/30 hover:text-galpe-red transition-all duration-300 w-full rounded-xl hover:bg-galpe-red/5 group"
+                class="flex items-center gap-3 px-4 py-3 text-white/30 hover:text-galpe-orange transition-all duration-300 w-full rounded-xl hover:bg-galpe-orange/5 group"
             >
                 <div
-                    class="p-2 rounded-lg group-hover:bg-galpe-red/10 transition-colors"
+                    class="p-2 rounded-lg group-hover:bg-galpe-orange/10 transition-colors"
                 >
                     <LogOut size={20} />
                 </div>
@@ -374,7 +374,7 @@
     >
         <div class="flex items-center gap-2">
             <span
-                class="icon icon-core-galpe text-galpe-red text-5xl drop-shadow-[0_0_10px_rgba(217,35,50,0.5)]"
+                class="icon icon-core-galpe text-galpe-green text-5xl drop-shadow-[0_0_10px_rgba(45,115,62,0.5)]"
             ></span>
         </div>
         <button
@@ -532,7 +532,7 @@
 
                 <button
                     onclick={handleLogout}
-                    class="w-full flex items-center justify-center gap-3 px-5 py-5 rounded-2xl bg-galpe-red/10 text-galpe-red font-bold mt-8"
+                    class="w-full flex items-center justify-center gap-3 px-5 py-5 rounded-2xl bg-galpe-orange/10 text-galpe-orange font-bold mt-8"
                 >
                     <LogOut size={24} />
                     <span>Cerrar Sesión</span>
@@ -543,7 +543,7 @@
 
     <main class="flex-1 overflow-y-auto bg-[#0a0a0b] relative">
         <div
-            class="absolute inset-0 bg-gradient-to-br from-galpe-red/5 via-transparent to-transparent pointer-events-none"
+            class="absolute inset-0 bg-gradient-to-br from-galpe-green/5 via-transparent to-transparent pointer-events-none"
         ></div>
         <div class="relative z-10 px-4 py-8 lg:px-12 lg:py-10">
             {@render children()}

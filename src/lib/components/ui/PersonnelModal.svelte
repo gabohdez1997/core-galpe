@@ -101,7 +101,7 @@
                 <h2
                     class="text-xl font-bold text-white flex items-center gap-2"
                 >
-                    <User class="text-galpe-red" size={24} />
+                    <User class="text-galpe-green" size={24} />
                     {person ? "Editar Personal" : "Nuevo Personal"}
                 </h2>
                 <button
@@ -127,7 +127,7 @@
                     >
                     <div class="relative group">
                         <User
-                            class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-red transition-colors"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-green transition-colors"
                             size={18}
                         />
                         <input
@@ -135,7 +135,7 @@
                             type="text"
                             bind:value={formData.full_name}
                             required
-                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all font-medium"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all font-medium"
                             placeholder="Ej: Juan Pérez"
                         />
                     </div>
@@ -150,14 +150,14 @@
                         >
                         <div class="relative group">
                             <Mail
-                                class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-red transition-colors"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-green transition-colors"
                                 size={18}
                             />
                             <input
                                 id="email"
                                 type="email"
                                 bind:value={formData.email}
-                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                 placeholder="juan@galpe.com"
                             />
                         </div>
@@ -170,14 +170,14 @@
                         >
                         <div class="relative group">
                             <Phone
-                                class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-red transition-colors"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-green transition-colors"
                                 size={18}
                             />
                             <input
                                 id="phone"
                                 type="tel"
                                 bind:value={formData.phone}
-                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                 placeholder="+58 412..."
                             />
                         </div>
@@ -192,13 +192,13 @@
                     >
                     <div class="relative group">
                         <Building
-                            class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-red transition-colors"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-green transition-colors"
                             size={18}
                         />
                         <select
                             id="dept"
                             bind:value={formData.department_id}
-                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none"
                         >
                             <option value="">Sin asignar</option>
                             {#each departments as dept}

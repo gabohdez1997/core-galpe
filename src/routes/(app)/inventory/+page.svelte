@@ -2,6 +2,7 @@
     import GlassCard from "$lib/components/ui/GlassCard.svelte";
     import GlassButton from "$lib/components/ui/GlassButton.svelte";
     import {
+        Package,
         Search,
         Filter,
         Laptop,
@@ -175,7 +176,7 @@
             case "maintenance":
                 return "text-galpe-orange bg-galpe-orange/20 border-galpe-orange/30";
             case "retired":
-                return "text-galpe-red bg-galpe-red/20 border-galpe-red/30";
+                return "text-galpe-green bg-galpe-green/20 border-galpe-green/30";
             default:
                 return "text-white/50 bg-white/5 border-white/10";
         }
@@ -187,7 +188,10 @@
         class="flex flex-col md:flex-row md:items-center justify-between gap-4"
     >
         <div>
-            <h1 class="text-3xl font-bold text-white/90">
+            <h1
+                class="text-3xl font-bold text-white/90 flex items-center gap-3"
+            >
+                <Package size={32} class="text-galpe-green" />
                 Gestión de Inventario
             </h1>
             <p class="text-white/50">
@@ -207,10 +211,12 @@
     </header>
 
     {#if pendingScans.length > 0}
-        <GlassCard class="bg-galpe-red/5 border-galpe-red/20 p-4 border-2">
+        <GlassCard class="bg-galpe-green/5 border-galpe-green/20 p-4 border-2">
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <div class="p-2 bg-galpe-red/20 text-galpe-red rounded-lg">
+                    <div
+                        class="p-2 bg-galpe-green/20 text-galpe-green rounded-lg"
+                    >
                         <AlertCircle size={20} />
                     </div>
                     <div>
@@ -246,7 +252,7 @@
                     type="text"
                     bind:value={searchQuery}
                     placeholder="Buscar por nombre o número de serie..."
-                    class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-galpe-red/30 transition-all"
+                    class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-galpe-green/30 transition-all"
                 />
             </div>
 
@@ -272,7 +278,7 @@
     <div class="grid grid-cols-1 gap-4">
         {#if error}
             <div
-                class="flex flex-col items-center justify-center py-20 text-galpe-red/60 glass rounded-2xl border-galpe-red/20"
+                class="flex flex-col items-center justify-center py-20 text-galpe-green/60 glass rounded-2xl border-galpe-green/20"
             >
                 <AlertCircle size={48} class="mb-4" />
                 <p class="text-sm font-mono bg-black/20 p-4 rounded-lg mb-4">
@@ -289,7 +295,7 @@
                 class="flex flex-col items-center justify-center py-20 text-white/20"
             >
                 <div
-                    class="w-10 h-10 border-4 border-galpe-red border-t-transparent rounded-full animate-spin mb-4"
+                    class="w-10 h-10 border-4 border-galpe-green border-t-transparent rounded-full animate-spin mb-4"
                 ></div>
                 Cargando inventario...
             </div>
@@ -349,7 +355,7 @@
                                         {/if}
                                         <div>
                                             <div
-                                                class="text-[10px] font-black uppercase tracking-tighter text-galpe-red mb-0.5"
+                                                class="text-[10px] font-black uppercase tracking-tighter text-galpe-green mb-0.5"
                                             >
                                                 {item.asset_tag ?? "Sin Código"}
                                             </div>
@@ -413,7 +419,7 @@
                                         <button
                                             onclick={() =>
                                                 handleDelete(item.id)}
-                                            class="w-8 h-8 rounded-lg flex items-center justify-center bg-galpe-red/10 hover:bg-galpe-red/20 text-galpe-red/60 hover:text-galpe-red transition-all"
+                                            class="w-8 h-8 rounded-lg flex items-center justify-center bg-galpe-green/10 hover:bg-galpe-green/20 text-galpe-green/60 hover:text-galpe-green transition-all"
                                             title="Eliminar"
                                         >
                                             <Trash2 size={16} />

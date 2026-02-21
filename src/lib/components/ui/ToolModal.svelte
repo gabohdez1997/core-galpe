@@ -127,7 +127,7 @@
                 <h2
                     class="text-xl font-bold text-white flex items-center gap-2"
                 >
-                    <Wrench class="text-galpe-red" size={24} />
+                    <Wrench class="text-galpe-green" size={24} />
                     {tool ? "Editar Herramienta" : "Nueva Herramienta"}
                 </h2>
                 <button
@@ -153,7 +153,7 @@
                     >
                     <div class="relative group">
                         <Tag
-                            class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-red transition-colors"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-green transition-colors"
                             size={18}
                         />
                         <input
@@ -161,7 +161,7 @@
                             type="text"
                             bind:value={formData.name}
                             required
-                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all font-medium"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all font-medium"
                             placeholder="Ej: Multímetro Digital"
                         />
                     </div>
@@ -175,14 +175,14 @@
                     >
                     <div class="relative group">
                         <Info
-                            class="absolute left-4 top-4 text-white/20 group-focus-within:text-galpe-red transition-colors"
+                            class="absolute left-4 top-4 text-white/20 group-focus-within:text-galpe-green transition-colors"
                             size={18}
                         />
                         <textarea
                             id="description"
                             bind:value={formData.description}
                             rows="2"
-                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                             placeholder="Detalles adicionales..."
                         ></textarea>
                     </div>
@@ -197,14 +197,14 @@
                         >
                         <div class="relative group">
                             <Hash
-                                class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-red transition-colors"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-green transition-colors"
                                 size={18}
                             />
                             <input
                                 id="serial"
                                 type="text"
                                 bind:value={formData.serial_number}
-                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all font-mono"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all font-mono"
                                 placeholder="SN-..."
                             />
                         </div>
@@ -217,13 +217,13 @@
                         >
                         <div class="relative group">
                             <Shield
-                                class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-red transition-colors"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-green transition-colors"
                                 size={18}
                             />
                             <select
                                 id="status"
                                 bind:value={formData.status}
-                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none"
                             >
                                 <option value="active">Activo</option>
                                 <option value="maintenance"
@@ -244,13 +244,13 @@
                     >
                     <div class="relative group">
                         <Building
-                            class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-red transition-colors"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-green transition-colors"
                             size={18}
                         />
                         <select
                             id="dept"
                             bind:value={formData.department_id}
-                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none"
                         >
                             <option value="">Sin asignar</option>
                             {#each departments as dept}
@@ -271,13 +271,13 @@
                     >
                     <div class="relative group">
                         <User
-                            class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-red transition-colors"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-galpe-green transition-colors"
                             size={18}
                         />
                         <select
                             id="responsible"
                             bind:value={formData.responsible_id}
-                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none"
                         >
                             <option value="">Sin asignar</option>
                             {#each personnel as p}

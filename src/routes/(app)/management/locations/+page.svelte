@@ -96,7 +96,10 @@
 <div class="max-w-4xl mx-auto p-4 md:p-8 space-y-6">
     <header class="flex justify-between items-center">
         <div>
-            <h1 class="text-3xl font-bold text-white">Sedes / Ubicaciones</h1>
+            <h1 class="text-3xl font-bold text-white flex items-center gap-3">
+                <MapPin size={32} class="text-galpe-green" />
+                Sedes / Ubicaciones
+            </h1>
             <p class="text-white/50">
                 Gestiona las sedes físicas de la empresa
             </p>
@@ -124,7 +127,7 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-4">
                             <div
-                                class="w-10 h-10 rounded-full bg-galpe-red/10 flex items-center justify-center text-galpe-red"
+                                class="w-10 h-10 rounded-full bg-galpe-green/10 flex items-center justify-center text-galpe-green"
                             >
                                 <MapPin size={20} />
                             </div>
@@ -143,7 +146,7 @@
                             </button>
                             <button
                                 onclick={() => handleDelete(item.id)}
-                                class="p-2 text-galpe-red/60 hover:text-galpe-red transition-colors"
+                                class="p-2 text-galpe-green/60 hover:text-galpe-green transition-colors"
                             >
                                 <Trash2 size={16} />
                             </button>
@@ -183,7 +186,7 @@
                     type="text"
                     bind:value={itemName}
                     placeholder="Nombre de la sede (ej: Principal, Sucursal Norte)"
-                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40"
+                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40"
                 />
             </div>
             <div class="flex gap-3 pt-2">

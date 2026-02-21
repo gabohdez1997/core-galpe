@@ -154,7 +154,7 @@
             <h1
                 class="text-3xl font-bold text-white/90 flex items-center gap-3"
             >
-                <Ticket class="text-galpe-red" size={32} />
+                <Ticket class="text-galpe-green" size={32} />
                 Gestión de Soporte Técnico
             </h1>
             <p class="text-white/50">
@@ -211,9 +211,9 @@
     <div class="space-y-4">
         {#if error}
             <div
-                class="py-20 text-center glass rounded-3xl border-galpe-red/20"
+                class="py-20 text-center glass rounded-3xl border-galpe-green/20"
             >
-                <AlertCircle size={48} class="mx-auto mb-4 text-galpe-red/60" />
+                <AlertCircle size={48} class="mx-auto mb-4 text-galpe-green/60" />
                 <p class="text-white/40 mb-4">{error}</p>
                 <GlassButton variant="secondary" onclick={fetchTickets}
                     >Reintentar</GlassButton
@@ -222,7 +222,7 @@
         {:else if loading}
             <div class="py-20 text-center text-white/20">
                 <div
-                    class="w-10 h-10 border-4 border-galpe-red border-t-transparent rounded-full animate-spin mx-auto mb-4"
+                    class="w-10 h-10 border-4 border-galpe-green border-t-transparent rounded-full animate-spin mx-auto mb-4"
                 ></div>
                 Sincronizando tickets...
             </div>
@@ -271,7 +271,7 @@
 
                             <h3
                                 onclick={() => openDetail(item)}
-                                class="text-xl font-bold text-white group-hover:text-galpe-red transition-colors truncate cursor-pointer"
+                                class="text-xl font-bold text-white group-hover:text-galpe-green transition-colors truncate cursor-pointer"
                             >
                                 {item.title}
                             </h3>
@@ -280,7 +280,7 @@
                                 <div
                                     class="flex items-center gap-2 text-white/50"
                                 >
-                                    <User size={14} class="text-galpe-red/60" />
+                                    <User size={14} class="text-galpe-green/60" />
                                     {item.personnel?.full_name || "Desconocido"}
                                 </div>
                                 {#if item.equipment}
@@ -338,7 +338,7 @@
                                 </button>
                                 <button
                                     onclick={() => openEditModal(item)}
-                                    class="px-3 py-2 rounded-xl bg-galpe-red/10 hover:bg-galpe-red/20 text-galpe-red/60 hover:text-galpe-red transition-all"
+                                    class="px-3 py-2 rounded-xl bg-galpe-green/10 hover:bg-galpe-green/20 text-galpe-green/60 hover:text-galpe-green transition-all"
                                     title="Editar / Gestionar"
                                 >
                                     <Edit2 size={14} />

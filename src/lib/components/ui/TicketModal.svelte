@@ -239,8 +239,8 @@
                 class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5"
             >
                 <div class="flex items-center gap-3">
-                    <div class="p-2 bg-galpe-red/20 rounded-xl">
-                        <TicketIcon class="text-galpe-red" size={24} />
+                    <div class="p-2 bg-galpe-green/20 rounded-xl">
+                        <TicketIcon class="text-galpe-green" size={24} />
                     </div>
                     <div>
                         <h2 class="text-xl font-bold text-white">
@@ -281,7 +281,7 @@
                         type="text"
                         bind:value={formData.title}
                         required
-                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all font-medium text-lg"
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all font-medium text-lg"
                         placeholder="Ej: La impresora no conecta / Windows lento"
                     />
                 </div>
@@ -301,7 +301,7 @@
                             <select
                                 id="cat"
                                 bind:value={formData.category_id}
-                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none"
                             >
                                 <option value="">Seleccionar falla...</option>
                                 {#each categories as cat}
@@ -342,7 +342,7 @@
                         <button
                             type="button"
                             class="text-[10px] font-black italic tracking-tighter px-2 py-0.5 rounded-lg transition-all {isCreatingPerson
-                                ? 'bg-galpe-red text-white'
+                                ? 'bg-galpe-green text-white'
                                 : 'bg-white/5 text-white/40 hover:bg-white/10'}"
                             onclick={() =>
                                 (isCreatingPerson = !isCreatingPerson)}
@@ -353,7 +353,7 @@
 
                     {#if isCreatingPerson}
                         <div
-                            class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-2xl bg-galpe-red/5 border border-galpe-red/10 animate-in slide-in-from-top-2"
+                            class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-2xl bg-galpe-green/5 border border-galpe-green/10 animate-in slide-in-from-top-2"
                         >
                             <div class="space-y-1">
                                 <label
@@ -368,7 +368,7 @@
                                     <input
                                         type="text"
                                         bind:value={newPerson.full_name}
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-3 py-2 text-sm text-white focus:ring-1 focus:ring-galpe-red transition-all"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-3 py-2 text-sm text-white focus:ring-1 focus:ring-galpe-green transition-all"
                                         placeholder="Nombre..."
                                     />
                                 </div>
@@ -424,7 +424,7 @@
                             />
                             <select
                                 bind:value={formData.personnel_id}
-                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none"
                             >
                                 <option value="">Seleccionar personal...</option
                                 >
@@ -452,7 +452,7 @@
                         <select
                             id="eq"
                             bind:value={formData.equipment_id}
-                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none"
                         >
                             <option value="">Sin equipo asociado</option>
                             {#each equipment as eq}
@@ -473,7 +473,7 @@
                     <textarea
                         id="desc"
                         bind:value={formData.description}
-                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all min-h-[120px] resize-none"
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all min-h-[120px] resize-none"
                         placeholder="Describe el problema o los síntomas..."
                     ></textarea>
                 </div>
@@ -495,7 +495,7 @@
                             <select
                                 id="tech"
                                 bind:value={formData.assigned_to}
-                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none"
                             >
                                 <option value="">Sin asignar aún</option>
                                 {#each technicians as tech}
@@ -521,7 +521,7 @@
                             <select
                                 id="stat"
                                 bind:value={formData.status}
-                                class="w-full bg-white/10 border border-white/20 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none font-bold italic"
+                                class="w-full bg-white/10 border border-white/20 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none font-bold italic"
                             >
                                 {#each statuses as s}
                                     <option value={s.id}

@@ -50,7 +50,7 @@
             case "UPDATE":
                 return "text-galpe-orange";
             case "DELETE":
-                return "text-galpe-red";
+                return "text-galpe-green";
             default:
                 return "text-white/50";
         }
@@ -70,14 +70,17 @@
 
 <div class="max-w-4xl mx-auto p-4 md:p-8 space-y-6">
     <header>
-        <h1 class="text-3xl font-bold text-white/90">Registros de Auditoría</h1>
+        <h1 class="text-3xl font-bold text-white/90 flex items-center gap-3">
+            <History size={32} class="text-galpe-green" />
+            Registros de Auditoría
+        </h1>
         <p class="text-white/50">Historial completo de cambios en el sistema</p>
     </header>
 
     <div class="space-y-4">
         {#if error}
             <div
-                class="flex flex-col items-center justify-center py-20 text-galpe-red/70 glass rounded-2xl border-galpe-red/10"
+                class="flex flex-col items-center justify-center py-20 text-galpe-green/70 glass rounded-2xl border-galpe-green/10"
             >
                 <AlertCircle size={48} class="mb-4 opacity-50" />
                 <p>Error al cargar registros</p>

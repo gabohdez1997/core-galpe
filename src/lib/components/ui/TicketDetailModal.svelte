@@ -153,7 +153,7 @@
                                 Usuario afectado
                             </h4>
                             <div class="flex items-center gap-2 text-white/90">
-                                <User size={16} class="text-galpe-red" />
+                                <User size={16} class="text-galpe-green" />
                                 <span class="font-medium"
                                     >{ticket.personnel?.full_name ||
                                         "Desconocido"}</span
@@ -228,7 +228,7 @@
                             >
                                 <div
                                     class="absolute left-[-5px] top-1 w-2 h-2 rounded-full {event.new_status
-                                        ? 'bg-galpe-red'
+                                        ? 'bg-galpe-green'
                                         : 'bg-white/20'}"
                                 ></div>
                                 <div class="text-[10px] text-white/30 mb-1">
@@ -266,7 +266,7 @@
                         <textarea
                             bind:value={newComment}
                             placeholder="Escribe un comentario o nota técnica..."
-                            class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-xs text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-galpe-red/40 min-h-[60px] resize-none"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-xs text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-galpe-green/40 min-h-[60px] resize-none"
                         ></textarea>
                         <GlassButton
                             variant="primary"

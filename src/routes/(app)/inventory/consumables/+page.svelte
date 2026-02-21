@@ -99,7 +99,7 @@
             <h1
                 class="text-3xl font-bold text-white/90 flex items-center gap-3"
             >
-                <Boxes class="text-galpe-red" size={32} />
+                <Boxes class="text-galpe-green" size={32} />
                 Gestión de Consumibles
             </h1>
             <p class="text-white/50">
@@ -172,7 +172,7 @@
                 type="text"
                 bind:value={searchQuery}
                 placeholder="Buscar por nombre o categoría..."
-                class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-galpe-red/30 transition-all"
+                class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-galpe-green/30 transition-all"
             />
         </div>
     </GlassCard>
@@ -184,7 +184,7 @@
                 class="flex flex-col items-center justify-center py-20 text-white/20"
             >
                 <div
-                    class="w-10 h-10 border-4 border-galpe-red border-t-transparent rounded-full animate-spin mb-4"
+                    class="w-10 h-10 border-4 border-galpe-green border-t-transparent rounded-full animate-spin mb-4"
                 ></div>
                 Cargando insumos...
             </div>
@@ -225,7 +225,7 @@
                                 <td class="px-6 py-4">
                                     <div class="flex items-center gap-3">
                                         <div
-                                            class="w-10 h-10 rounded-xl bg-galpe-red/5 flex items-center justify-center text-galpe-red/40 group-hover:text-galpe-red transition-colors"
+                                            class="w-10 h-10 rounded-xl bg-galpe-green/5 flex items-center justify-center text-galpe-green/40 group-hover:text-galpe-green transition-colors"
                                         >
                                             <Boxes size={20} />
                                         </div>
@@ -293,7 +293,7 @@
                                             <button
                                                 onclick={() =>
                                                     handleDelete(item.id)}
-                                                class="w-8 h-8 rounded-lg flex items-center justify-center bg-galpe-red/10 hover:bg-galpe-red/20 text-galpe-red/60 hover:text-galpe-red transition-all"
+                                                class="w-8 h-8 rounded-lg flex items-center justify-center bg-galpe-green/10 hover:bg-galpe-green/20 text-galpe-green/60 hover:text-galpe-green transition-all"
                                                 title="Eliminar"
                                             >
                                                 <Trash2 size={16} />

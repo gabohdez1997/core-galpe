@@ -147,7 +147,7 @@
                         type="text"
                         bind:value={formData.name}
                         required
-                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all font-medium"
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all font-medium"
                         placeholder="Ej: Falla de Red Interna"
                     />
                 </div>
@@ -161,7 +161,7 @@
                     <textarea
                         id="description"
                         bind:value={formData.description}
-                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all min-h-[80px]"
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all min-h-[80px]"
                         placeholder="Opcional..."
                     ></textarea>
                 </div>

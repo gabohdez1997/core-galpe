@@ -112,7 +112,7 @@
                 class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5"
             >
                 <div class="flex items-center gap-3">
-                    <div class="p-2 bg-galpe-red/20 rounded-xl text-galpe-red">
+                    <div class="p-2 bg-galpe-green/20 rounded-xl text-galpe-green">
                         <Boxes size={24} />
                     </div>
                     <div>
@@ -155,7 +155,7 @@
                                 type="text"
                                 bind:value={formData.name}
                                 placeholder="Ej: Tóner HP 85A"
-                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/30"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/30"
                             />
                         </div>
                     </div>
@@ -174,7 +174,7 @@
                             <select
                                 id="category"
                                 bind:value={formData.category}
-                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/30 appearance-none cursor-pointer"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/30 appearance-none cursor-pointer"
                             >
                                 <option value="" disabled
                                     >Selecciona una categoría</option
@@ -200,7 +200,7 @@
                             type="text"
                             bind:value={formData.unit}
                             placeholder="unidades, metros, etc."
-                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/30"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/30"
                         />
                     </div>
 
@@ -219,7 +219,7 @@
                                 id="stock"
                                 type="number"
                                 bind:value={formData.stock_quantity}
-                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/30"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/30"
                             />
                         </div>
                     </div>
@@ -239,7 +239,7 @@
                                 id="min_stock"
                                 type="number"
                                 bind:value={formData.min_stock}
-                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/30"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/30"
                             />
                         </div>
                     </div>
@@ -262,7 +262,7 @@
                             bind:value={formData.description}
                             rows="3"
                             placeholder="Detalles adicionales sobre el insumo..."
-                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/30"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/30"
                         ></textarea>
                     </div>
                 </div>

@@ -233,7 +233,7 @@
                 class="p-6 border-b border-white/10 flex justify-between items-center bg-white/5"
             >
                 <div class="flex items-center gap-3">
-                    <div class="p-2 bg-galpe-red/20 rounded-xl text-galpe-red">
+                    <div class="p-2 bg-galpe-green/20 rounded-xl text-galpe-green">
                         <Cpu size={24} />
                     </div>
                     <div>
@@ -355,7 +355,7 @@
                                         id="asset_tag"
                                         type="text"
                                         bind:value={formData.asset_tag}
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all font-mono"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all font-mono"
                                         placeholder="GAL-001"
                                     />
                                 </div>
@@ -368,7 +368,7 @@
                                     <select
                                         id="status"
                                         bind:value={formData.status}
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none cursor-pointer"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none cursor-pointer"
                                     >
                                         <option value="active">Activo</option>
                                         <option value="maintenance"
@@ -396,7 +396,7 @@
                                     type="text"
                                     bind:value={formData.name}
                                     required
-                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                     placeholder="Ej: HP ProBook 450 G8"
                                 />
                             </div>
@@ -411,7 +411,7 @@
                                     <select
                                         id="type"
                                         bind:value={formData.type}
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none cursor-pointer"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none cursor-pointer"
                                     >
                                         <option value="computer"
                                             >Computadora</option
@@ -434,7 +434,7 @@
                                         id="serial"
                                         type="text"
                                         bind:value={formData.serial_number}
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all font-mono"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all font-mono"
                                         placeholder="SN-XXXXX"
                                     />
                                 </div>
@@ -449,7 +449,7 @@
                                 <select
                                     id="dept"
                                     bind:value={formData.department_id}
-                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none"
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none"
                                 >
                                     <option value="">Sin asignar</option>
                                     {#each departments as dept}
@@ -470,7 +470,7 @@
                                 <select
                                     id="responsible"
                                     bind:value={formData.responsible_id}
-                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none"
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none"
                                 >
                                     <option value="">Sin asignar</option>
                                     {#each personnel as p}
@@ -502,7 +502,7 @@
                                     <input
                                         type="text"
                                         bind:value={formData.specifications.cpu}
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                         placeholder="Intel Core i7-1185G7"
                                     />
                                 </div>
@@ -515,7 +515,7 @@
                                 <input
                                     type="text"
                                     bind:value={formData.specifications.ram}
-                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                     placeholder="16GB DDR4 3200MHz"
                                 />
                             </div>
@@ -527,7 +527,7 @@
                                 <input
                                     type="text"
                                     bind:value={formData.specifications.os}
-                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                     placeholder="Windows 11 Pro"
                                 />
                             </div>
@@ -541,7 +541,7 @@
                                 >
                                     <HardDrive
                                         size={18}
-                                        class="text-galpe-red"
+                                        class="text-galpe-green"
                                     />
                                     Unidades de Almacenamiento
                                 </h3>
@@ -577,7 +577,7 @@
                                         <button
                                             type="button"
                                             onclick={() => removeDisk(i)}
-                                            class="text-white/20 hover:text-galpe-red transition-colors"
+                                            class="text-white/20 hover:text-galpe-green transition-colors"
                                         >
                                             <Trash2 size={18} />
                                         </button>
@@ -604,7 +604,7 @@
                                 bind:value={
                                     formData.specifications.additional_notes
                                 }
-                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all min-h-[100px] resize-none"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all min-h-[100px] resize-none"
                                 placeholder="Ej: Office 2021, AutoCAD, Licencia de..."
                             ></textarea>
                         </div>
@@ -617,7 +617,7 @@
                     >
                         <section class="space-y-4">
                             <h3
-                                class="text-sm font-bold text-white uppercase tracking-widest border-l-4 border-galpe-red pl-3"
+                                class="text-sm font-bold text-white uppercase tracking-widest border-l-4 border-galpe-green pl-3"
                             >
                                 Red
                             </h3>
@@ -632,7 +632,7 @@
                                         bind:value={
                                             formData.specifications.ip_address
                                         }
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all font-mono"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all font-mono"
                                         placeholder="192.168.1.100"
                                     />
                                 </div>
@@ -646,7 +646,7 @@
                                         bind:value={
                                             formData.specifications.mac_address
                                         }
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all font-mono"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all font-mono"
                                         placeholder="00:1A:2B:3C:4D:5E"
                                     />
                                 </div>
@@ -655,7 +655,7 @@
 
                         <section class="space-y-4">
                             <h3
-                                class="text-sm font-bold text-white uppercase tracking-widest border-l-4 border-galpe-red pl-3"
+                                class="text-sm font-bold text-white uppercase tracking-widest border-l-4 border-galpe-green pl-3"
                             >
                                 Periféricos (Monitor)
                             </h3>
@@ -671,7 +671,7 @@
                                             formData.specifications
                                                 .monitor_model
                                         }
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                         placeholder="Dell UltraSharp U2723QE"
                                     />
                                 </div>
@@ -685,7 +685,7 @@
                                         bind:value={
                                             formData.specifications.monitor_size
                                         }
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                         placeholder="27 pulgadas"
                                     />
                                 </div>
@@ -700,7 +700,7 @@
                                             formData.specifications
                                                 .monitor_serial
                                         }
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all font-mono"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all font-mono"
                                         placeholder="CN-0XXXX-..."
                                     />
                                 </div>
@@ -709,7 +709,7 @@
 
                         <section class="space-y-4">
                             <h3
-                                class="text-sm font-bold text-white uppercase tracking-widest border-l-4 border-galpe-red pl-3"
+                                class="text-sm font-bold text-white uppercase tracking-widest border-l-4 border-galpe-green pl-3"
                             >
                                 Otros Periféricos
                             </h3>
@@ -725,7 +725,7 @@
                                             formData.specifications
                                                 .keyboard_brand
                                         }
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                         placeholder="Logitech MX Keys"
                                     />
                                 </div>
@@ -739,7 +739,7 @@
                                         bind:value={
                                             formData.specifications.mouse_brand
                                         }
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                         placeholder="Logitech MX Master 3S"
                                     />
                                 </div>
@@ -753,7 +753,7 @@
                                             formData.specifications
                                                 .connected_printers
                                         }
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all min-h-[60px] resize-none"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all min-h-[60px] resize-none"
                                         placeholder="Ej: HP LaserJet Pro (Local), Brother HL (Red)"
                                     ></textarea>
                                 </div>
@@ -768,7 +768,7 @@
                     >
                         <section class="space-y-4">
                             <h3
-                                class="text-sm font-bold text-white uppercase tracking-widest border-l-4 border-galpe-red pl-3"
+                                class="text-sm font-bold text-white uppercase tracking-widest border-l-4 border-galpe-green pl-3"
                             >
                                 Compra y Garantía
                             </h3>
@@ -783,7 +783,7 @@
                                         bind:value={
                                             formData.specifications.vendor
                                         }
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                         placeholder="Dell Store / Amazon"
                                     />
                                 </div>
@@ -802,7 +802,7 @@
                                             bind:value={
                                                 formData.specifications.cost
                                             }
-                                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                             placeholder="0.00"
                                         />
                                     </div>
@@ -823,7 +823,7 @@
                                                 formData.specifications
                                                     .purchase_date
                                             }
-                                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                         />
                                     </div>
                                 </div>
@@ -843,7 +843,7 @@
                                                 formData.specifications
                                                     .warranty_expiry
                                             }
-                                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                            class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                         />
                                     </div>
                                 </div>
@@ -852,7 +852,7 @@
 
                         <section class="space-y-4">
                             <h3
-                                class="text-sm font-bold text-white uppercase tracking-widest border-l-4 border-galpe-red pl-3"
+                                class="text-sm font-bold text-white uppercase tracking-widest border-l-4 border-galpe-green pl-3"
                             >
                                 Respaldo (UPS)
                             </h3>
@@ -867,7 +867,7 @@
                                         bind:value={
                                             formData.specifications.ups_brand
                                         }
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                         placeholder="APC Back-UPS"
                                     />
                                 </div>
@@ -881,7 +881,7 @@
                                         bind:value={
                                             formData.specifications.ups_capacity
                                         }
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all"
                                         placeholder="750VA / 450W"
                                     />
                                 </div>
@@ -894,7 +894,7 @@
                                         bind:value={
                                             formData.specifications.ups_status
                                         }
-                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-red/40 transition-all appearance-none cursor-pointer"
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all appearance-none cursor-pointer"
                                     >
                                         <option value="Batería Ok"
                                             >Batería Ok</option
