@@ -29,6 +29,15 @@
     let history = $state<TicketHistory[]>([]);
     let loading = $state(false);
     let newComment = $state("");
+    let selectedStatus = $state("");
+    let isSaving = $state(false);
+
+    const statuses = [
+        { id: "abierto", label: "Abierto" },
+        { id: "en_proceso", label: "En Proceso" },
+        { id: "resuelto", label: "Resuelto" },
+        { id: "cerrado", label: "Cerrado" },
+    ];
 
     async function fetchHistory() {
         if (!ticket) return;
@@ -57,25 +66,69 @@
     $effect(() => {
         if (isOpen && ticket) {
             fetchHistory();
+            selectedStatus = ticket.status || "abierto";
         }
     });
 
     async function addComment() {
-        if (!newComment.trim() || !ticket) return;
+        if (!ticket) return;
+        if (!newComment.trim() && selectedStatus === ticket.status) return;
 
         try {
-            const { error } = await supabase.from("ticket_history").insert({
-                ticket_id: ticket.id,
-                comment: newComment,
-                user_id: (await supabase.auth.getUser()).data.user?.id,
-            });
+            isSaving = true;
+            const statusChanged = selectedStatus !== ticket.status;
 
-            if (error) throw error;
+            if (statusChanged) {
+                // Actualizar estado en la tabla de tickets
+                const { error: updateError } = await supabase
+                    .from("tickets")
+                    .update({
+                        status: selectedStatus,
+                        updated_at: new Date().toISOString(),
+                        ...(selectedStatus === "cerrado"
+                            ? { closed_at: new Date().toISOString() }
+                            : {}),
+                    })
+                    .eq("id", ticket.id);
+
+                if (updateError) throw updateError;
+            }
+
+            // Insertar historial
+            const historyData: any = {
+                ticket_id: ticket.id,
+                user_id: (await supabase.auth.getUser()).data.user?.id,
+            };
+
+            if (newComment.trim()) historyData.comment = newComment.trim();
+            if (statusChanged) {
+                historyData.previous_status = ticket.status;
+                historyData.new_status = selectedStatus;
+            }
+
+            const { error: historyError } = await supabase
+                .from("ticket_history")
+                .insert(historyData);
+            if (historyError) throw historyError;
+
+            if (statusChanged) {
+                ticket.status = selectedStatus as any;
+                // Disparar evento para que el padre recargue
+                const event = new CustomEvent("ticketupdated");
+                window.dispatchEvent(event);
+            }
+
             newComment = "";
             fetchHistory();
-            toast.success("Comentario añadido");
+            toast.success(
+                statusChanged
+                    ? "Estado y comentario actualizados"
+                    : "Comentario añadido",
+            );
         } catch (e: any) {
-            toast.error("Error al comentar: " + e.message);
+            toast.error("Error al procesar: " + e.message);
+        } finally {
+            isSaving = false;
         }
     }
 
@@ -267,19 +320,44 @@
                         {/each}
                     </div>
 
-                    <div class="pt-4 border-t border-white/10 space-y-2">
+                    <div class="pt-4 border-t border-white/10 space-y-3">
+                        <div class="space-y-1">
+                            <label
+                                class="text-[10px] font-bold uppercase text-white/40 ml-1"
+                                >Estado actual / Cambiar</label
+                            >
+                            <select
+                                bind:value={selectedStatus}
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:ring-1 focus:ring-galpe-green/40 transition-all appearance-none font-bold"
+                            >
+                                {#each statuses as s}
+                                    <option value={s.id}
+                                        >{s.label.toUpperCase()}</option
+                                    >
+                                {/each}
+                            </select>
+                        </div>
                         <textarea
                             bind:value={newComment}
-                            placeholder="Escribe un comentario o nota técnica..."
+                            placeholder="Escribe un comentario o nota técnica (opcional si cambias estado)..."
                             class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-xs text-white placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-galpe-green/40 min-h-[60px] resize-none"
                         ></textarea>
                         <GlassButton
                             variant="primary"
                             class="w-full py-2 text-xs rounded-xl"
                             onclick={addComment}
-                            disabled={!newComment.trim()}
+                            disabled={(!newComment.trim() &&
+                                selectedStatus === ticket.status) ||
+                                isSaving}
+                            loading={isSaving}
                         >
-                            <MessageSquare size={14} class="mr-2" /> Comentar
+                            <MessageSquare size={14} class="mr-2" />
+                            {selectedStatus !== ticket.status &&
+                            newComment.trim()
+                                ? "Actualizar y Comentar"
+                                : selectedStatus !== ticket.status
+                                  ? "Actualizar Estado"
+                                  : "Comentar"}
                         </GlassButton>
                     </div>
                 </div>
@@ -299,5 +377,10 @@
     .custom-scrollbar-thin::-webkit-scrollbar-thumb {
         background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
+    }
+
+    select option {
+        background: #1a1a1a;
+        color: white;
     }
 </style>
