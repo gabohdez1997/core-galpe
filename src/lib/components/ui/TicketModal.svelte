@@ -31,12 +31,12 @@
         ticket = null,
         onSave,
         onClose,
-    } = $props<{
+    }: {
         isOpen: boolean;
         ticket?: Ticket | null;
         onSave: () => void;
         onClose: () => void;
-    }>();
+    } = $props();
 
     let loading = $state(false);
     let categories = $state<TicketCategory[]>([]);
@@ -62,6 +62,8 @@
         assigned_to: "",
         priority: "media" as any,
         status: "abierto" as any,
+        created_at: "",
+        closed_at: "",
     });
 
     $effect(() => {
@@ -75,9 +77,28 @@
                 assigned_to: ticket.assigned_to || "",
                 priority: ticket.priority,
                 status: ticket.status,
+                created_at: ticket.created_at
+                    ? new Date(
+                          new Date(ticket.created_at).getTime() -
+                              new Date().getTimezoneOffset() * 60000,
+                      )
+                          .toISOString()
+                          .slice(0, 16)
+                    : "",
+                closed_at: ticket.closed_at
+                    ? new Date(
+                          new Date(ticket.closed_at).getTime() -
+                              new Date().getTimezoneOffset() * 60000,
+                      )
+                          .toISOString()
+                          .slice(0, 16)
+                    : "",
             };
             isCreatingPerson = false;
         } else {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            const nowLocalString = now.toISOString().slice(0, 16);
             formData = {
                 title: "",
                 description: "",
@@ -87,6 +108,8 @@
                 assigned_to: "",
                 priority: "media",
                 status: "abierto",
+                created_at: nowLocalString,
+                closed_at: "",
             };
         }
     });
@@ -157,6 +180,12 @@
                 priority: formData.priority,
                 status: formData.status,
                 updated_at: new Date().toISOString(),
+                created_at: formData.created_at
+                    ? new Date(formData.created_at).toISOString()
+                    : new Date().toISOString(),
+                closed_at: formData.closed_at
+                    ? new Date(formData.closed_at).toISOString()
+                    : null,
             };
 
             if (ticket) {
@@ -461,6 +490,33 @@
                                 >
                             {/each}
                         </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-1">
+                        <label
+                            class="text-[10px] font-bold uppercase text-white/40 ml-1"
+                            >Fecha de Solicitud (Creación)</label
+                        >
+                        <input
+                            type="datetime-local"
+                            bind:value={formData.created_at}
+                            required
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all text-sm"
+                        />
+                    </div>
+
+                    <div class="space-y-1">
+                        <label
+                            class="text-[10px] font-bold uppercase text-white/40 ml-1"
+                            >Fecha de Cierre (Opcional)</label
+                        >
+                        <input
+                            type="datetime-local"
+                            bind:value={formData.closed_at}
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-galpe-green/40 transition-all text-sm"
+                        />
                     </div>
                 </div>
 

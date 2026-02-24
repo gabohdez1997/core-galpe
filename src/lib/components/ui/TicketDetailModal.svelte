@@ -13,13 +13,18 @@
     import type { Ticket, TicketHistory } from "$lib/types/database";
     import { onMount } from "svelte";
     import GlassButton from "./GlassButton.svelte";
+    import GlassCard from "./GlassCard.svelte";
     import { toast } from "svelte-sonner";
 
-    let { isOpen, ticket, onClose } = $props<{
+    let {
+        isOpen,
+        ticket,
+        onClose,
+    }: {
         isOpen: boolean;
         ticket: Ticket | null;
         onClose: () => void;
-    }>();
+    } = $props();
 
     let history = $state<TicketHistory[]>([]);
     let loading = $state(false);
@@ -83,7 +88,7 @@
         });
     }
 
-    const priorityColors = {
+    const priorityColors: Record<string, string> = {
         baja: "text-blue-400 bg-blue-400/10",
         media: "text-yellow-400 bg-yellow-400/10",
         alta: "text-orange-400 bg-orange-400/10",

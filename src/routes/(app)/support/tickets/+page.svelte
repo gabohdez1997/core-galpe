@@ -13,6 +13,7 @@
         Laptop,
         Edit2,
         Calendar,
+        History,
     } from "lucide-svelte";
     import { supabase } from "$lib/supabase/client";
     import { onMount } from "svelte";
@@ -116,7 +117,7 @@
         items.filter((item) => {
             const searchLower = searchQuery.toLowerCase();
             const matchesSearch =
-                item.title.toLowerCase().includes(searchLower) ||
+                (item.title || "").toLowerCase().includes(searchLower) ||
                 (item.personnel?.full_name
                     ?.toLowerCase()
                     .includes(searchLower) ??
@@ -137,6 +138,7 @@
     );
 
     function formatDate(dateStr: string) {
+        if (!dateStr) return "N/A";
         return new Date(dateStr).toLocaleDateString("es-ES", {
             day: "2-digit",
             month: "short",
@@ -213,7 +215,10 @@
             <div
                 class="py-20 text-center glass rounded-3xl border-galpe-green/20"
             >
-                <AlertCircle size={48} class="mx-auto mb-4 text-galpe-green/60" />
+                <AlertCircle
+                    size={48}
+                    class="mx-auto mb-4 text-galpe-green/60"
+                />
                 <p class="text-white/40 mb-4">{error}</p>
                 <GlassButton variant="secondary" onclick={fetchTickets}
                     >Reintentar</GlassButton
@@ -252,11 +257,13 @@
                                 <span
                                     class="text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded border {priorityMap[
                                         item.priority
-                                    ].color} {priorityMap[
+                                    ]?.color ||
+                                        'border-gray-500 text-gray-500'} {(priorityMap[
                                         item.priority
-                                    ].color.replace('text-', 'bg-') + '/10'}"
+                                    ]?.color?.replace('text-', 'bg-') ||
+                                        'bg-gray-500') + '/10'}"
                                 >
-                                    {item.priority}
+                                    {item.priority || "Sin prioridad"}
                                 </span>
                                 <span class="text-white/30 text-xs font-mono"
                                     >#{item.id.slice(0, 8)}</span
@@ -280,7 +287,10 @@
                                 <div
                                     class="flex items-center gap-2 text-white/50"
                                 >
-                                    <User size={14} class="text-galpe-green/60" />
+                                    <User
+                                        size={14}
+                                        class="text-galpe-green/60"
+                                    />
                                     {item.personnel?.full_name || "Desconocido"}
                                 </div>
                                 {#if item.equipment}
@@ -314,9 +324,13 @@
                             <div
                                 class="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold {statusMap[
                                     item.status
-                                ].color}"
+                                ]?.color || 'text-white/40 bg-white/5'}"
                             >
-                                {statusMap[item.status].label.toUpperCase()}
+                                {(
+                                    statusMap[item.status]?.label ||
+                                    item.status ||
+                                    "Desconocido"
+                                ).toUpperCase()}
                             </div>
 
                             <div

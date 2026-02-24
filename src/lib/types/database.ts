@@ -185,6 +185,7 @@ export interface Ticket {
     status: TicketStatus;
     created_at: string;
     updated_at: string;
+    closed_at?: string | null;
     ticket_categories?: TicketCategory;
     personnel?: Personnel;
     equipment?: Equipment;
