@@ -81,7 +81,13 @@
         isDetailOpen = true;
     }
 
-    onMount(fetchTickets);
+    onMount(() => {
+        fetchTickets();
+        window.addEventListener("ticketupdated", fetchTickets);
+        return () => {
+            window.removeEventListener("ticketupdated", fetchTickets);
+        };
+    });
 
     const statusMap = {
         abierto: {
@@ -268,12 +274,26 @@
                                 <span class="text-white/30 text-xs font-mono"
                                     >#{item.id.slice(0, 8)}</span
                                 >
-                                <span
-                                    class="text-white/20 text-[10px] flex items-center gap-1"
-                                >
-                                    <Calendar size={12} />
-                                    {formatDate(item.created_at)}
-                                </span>
+                                <div class="flex flex-col gap-1 text-[10px]">
+                                    <span
+                                        class="text-white/30 flex items-center gap-1"
+                                    >
+                                        <Calendar size={10} />
+                                        <span class="font-bold">CREADO:</span>
+                                        {formatDate(item.created_at)}
+                                    </span>
+                                    {#if item.closed_at}
+                                        <span
+                                            class="text-galpe-green/60 flex items-center gap-1"
+                                        >
+                                            <CheckCircle2 size={10} />
+                                            <span class="font-bold"
+                                                >CIERRE:</span
+                                            >
+                                            {formatDate(item.closed_at)}
+                                        </span>
+                                    {/if}
+                                </div>
                             </div>
 
                             <h3
