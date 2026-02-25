@@ -32,6 +32,17 @@
     let selectedStatus = $state("");
     let isSaving = $state(false);
 
+    function getLocalDatetimeString() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        return `${year}-${month}-${day}T${hours}:${minutes}`;
+    }
+    let selectedDate = $state("");
+
     const statuses = [
         { id: "abierto", label: "Abierto" },
         { id: "en_proceso", label: "En Proceso" },
@@ -67,6 +78,7 @@
         if (isOpen && ticket) {
             fetchHistory();
             selectedStatus = ticket.status || "abierto";
+            selectedDate = getLocalDatetimeString();
         }
     });
 
@@ -84,9 +96,9 @@
                     .from("tickets")
                     .update({
                         status: selectedStatus,
-                        updated_at: new Date().toISOString(),
+                        updated_at: new Date(selectedDate).toISOString(),
                         ...(selectedStatus === "cerrado"
-                            ? { closed_at: new Date().toISOString() }
+                            ? { closed_at: new Date(selectedDate).toISOString() }
                             : {}),
                     })
                     .eq("id", ticket.id);
@@ -98,6 +110,7 @@
             const historyData: any = {
                 ticket_id: ticket.id,
                 user_id: (await supabase.auth.getUser()).data.user?.id,
+                created_at: new Date(selectedDate).toISOString(),
             };
 
             if (newComment.trim()) historyData.comment = newComment.trim();
@@ -321,21 +334,36 @@
                     </div>
 
                     <div class="pt-4 border-t border-white/10 space-y-3">
-                        <div class="space-y-1">
-                            <label
-                                class="text-[10px] font-bold uppercase text-white/40 ml-1"
-                                >Estado actual / Cambiar</label
-                            >
-                            <select
-                                bind:value={selectedStatus}
-                                class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:ring-1 focus:ring-galpe-green/40 transition-all appearance-none font-bold"
-                            >
-                                {#each statuses as s}
-                                    <option value={s.id}
-                                        >{s.label.toUpperCase()}</option
-                                    >
-                                {/each}
-                            </select>
+                    <div class="pt-4 border-t border-white/10 space-y-3">
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="space-y-1">
+                                <label
+                                    class="text-[10px] font-bold uppercase text-white/40 ml-1"
+                                    >Estado actual / Cambiar</label
+                                >
+                                <select
+                                    bind:value={selectedStatus}
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:ring-1 focus:ring-galpe-green/40 transition-all appearance-none font-bold"
+                                >
+                                    {#each statuses as s}
+                                        <option value={s.id}
+                                            >{s.label.toUpperCase()}</option
+                                        >
+                                    {/each}
+                                </select>
+                            </div>
+                            <div class="space-y-1">
+                                <label
+                                    class="text-[10px] font-bold uppercase text-white/40 ml-1"
+                                    >Fecha del Registro</label
+                                >
+                                <input
+                                    type="datetime-local"
+                                    bind:value={selectedDate}
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:ring-1 focus:ring-galpe-green/40 transition-all font-bold"
+                                    style="color-scheme: dark;"
+                                />
+                            </div>
                         </div>
                         <textarea
                             bind:value={newComment}
