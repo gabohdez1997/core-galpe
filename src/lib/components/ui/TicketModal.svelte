@@ -12,6 +12,7 @@
         Plus,
         Building,
         Mail,
+        Trash2,
     } from "lucide-svelte";
     import GlassButton from "./GlassButton.svelte";
     import { supabase } from "$lib/supabase/client";
@@ -225,6 +226,36 @@
         } catch (e: any) {
             console.error(e);
             toast.error("Error: " + e.message);
+        } finally {
+            loading = false;
+        }
+    }
+
+    async function handleDelete() {
+        if (!ticket) return;
+        if (
+            !confirm(
+                `¿Estás seguro de que deseas eliminar el ticket #${ticket.id.slice(0, 8)}? Esta acción es irreversible.`,
+            )
+        ) {
+            return;
+        }
+
+        try {
+            loading = true;
+            const { error } = await supabase
+                .from("tickets")
+                .delete()
+                .eq("id", ticket.id);
+
+            if (error) throw error;
+
+            toast.success("Ticket eliminado");
+            onSave();
+            onClose();
+        } catch (e: any) {
+            console.error(e);
+            toast.error("Error al eliminar: " + e.message);
         } finally {
             loading = false;
         }
@@ -589,7 +620,18 @@
                     </div>
                 </div>
 
-                <div class="pt-8 flex gap-4">
+                <div class="pt-8 flex flex-col sm:flex-row gap-4">
+                    {#if ticket}
+                        <button
+                            type="button"
+                            onclick={handleDelete}
+                            disabled={loading}
+                            class="px-4 py-4 rounded-2xl bg-red-500/10 hover:bg-red-500/20 text-red-500 font-bold flex items-center justify-center transition-all disabled:opacity-50"
+                            title="Eliminar Ticket"
+                        >
+                            <Trash2 size={18} />
+                        </button>
+                    {/if}
                     <GlassButton
                         variant="secondary"
                         class="flex-1 rounded-2xl py-4"
@@ -600,7 +642,7 @@
                     </GlassButton>
                     <GlassButton
                         variant="primary"
-                        class="flex-1 rounded-2xl py-4"
+                        class="flex-[2] rounded-2xl py-4"
                         type="submit"
                         {loading}
                     >
