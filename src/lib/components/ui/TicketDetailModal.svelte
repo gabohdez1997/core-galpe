@@ -97,7 +97,7 @@
                     .update({
                         status: selectedStatus,
                         updated_at: new Date(selectedDate).toISOString(),
-                        ...(selectedStatus === "cerrado"
+                        ...(["cerrado", "resuelto"].includes(selectedStatus)
                             ? { closed_at: new Date(selectedDate).toISOString() }
                             : {}),
                     })
