@@ -338,7 +338,7 @@
                     </div>
 
                     <div class="pt-4 border-t border-white/10 space-y-3">
-                        <div class="grid grid-cols-2 gap-2">
+                        <div class="space-y-3">
                             <div class="space-y-1">
                                 <label
                                     class="text-[10px] font-bold uppercase text-white/40 ml-1"
