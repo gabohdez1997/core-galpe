@@ -121,7 +121,7 @@
             supabase.from("personnel").select("*").order("full_name"),
             supabase
                 .from("equipment")
-                .select("id, name, asset_tag")
+                .select("id, name, asset_tag, personnel(full_name)")
                 .order("name"),
             supabase.from("profiles").select("*").order("full_name"),
             supabase
@@ -517,7 +517,9 @@
                             <option value="">Sin equipo asociado</option>
                             {#each equipment as eq}
                                 <option value={eq.id}
-                                    >{eq.name} ({eq.asset_tag || "S/N"})</option
+                                    >{eq.name} ({eq.asset_tag || "S/N"}) - Resp: {eq
+                                        .personnel?.full_name ||
+                                        "Sin responsable"}</option
                                 >
                             {/each}
                         </select>
